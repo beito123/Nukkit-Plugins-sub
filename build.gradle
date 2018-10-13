@@ -1,0 +1,32 @@
+subprojects {
+    apply plugin: 'java'
+
+    sourceCompatibility = 1.8
+
+    def out = project.hasProperty('out') ? project.out : '../dist'
+
+    jar.archiveName = name + ".jar"
+
+    repositories {
+        mavenCentral()
+        maven {
+            url 'https://repo.nukkitx.com/snapshot'
+        }
+    }
+
+    dependencies {
+        compile 'cn.nukkit:nukkit:1.0-SNAPSHOT'
+    }
+
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+
+    /* put jar files to dist after building */
+    build.doLast {
+        copy {
+            from jar.archivePath
+            into out
+        }
+    }
+}

@@ -1,0 +1,5 @@
+rootProject.name = 'Plugin'
+
+include 'Roto'
+include 'Sit'
+

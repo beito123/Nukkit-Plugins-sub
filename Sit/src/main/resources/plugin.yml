@@ -1,0 +1,20 @@
+name: Sit
+version: 1.1.0
+author: beito3
+api: ["1.0.0"]
+main: ru.bk.beito3.sit.MainClass
+load: STARTUP
+
+commands:
+  sit:
+    description: "Sit here"
+    usage: "/sit"
+    permission: sit.command.sit
+
+permissions:
+  sit:
+    children:
+      sit.command:
+        children:
+          sit.command.sit:
+            default: true
