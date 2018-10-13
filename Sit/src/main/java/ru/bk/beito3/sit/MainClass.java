@@ -53,6 +53,8 @@ public class MainClass extends PluginBase implements Listener {
 
     @Override
     public void onEnable() {
+        this.saveResource("config-eng.yml");
+
         // Load config files
         Config config = new Config(new File(this.getDataFolder(), "config.yml"), Config.YAML);
         int changes = config.setDefault(new LinkedHashMap<String, Object>() {

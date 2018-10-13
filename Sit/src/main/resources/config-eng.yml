@@ -1,0 +1,6 @@
+# rename to config-eng.yml if you want.
+
+tap-warp: true
+command-sit-description: Sit here
+message-sat: §6Jump to stand up§r
+chair-network-id: 82
